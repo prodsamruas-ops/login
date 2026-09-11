@@ -25,7 +25,7 @@ const userController = {
 
             const hashedpassword = await userService.hashPassword(password);
 
-            const user = new User(name, email, password, null);
+            const user = new User(name, email, hashedpassword, role, null);
             const result = await userService.createUser(user);
 
             return res.status(201).json({
